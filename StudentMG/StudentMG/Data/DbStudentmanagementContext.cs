@@ -31,7 +31,7 @@ public partial class DbStudentmanagementContext : DbContext
 
     public virtual DbSet<Student> Students { get; set; }
 
-  /*  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+/*    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Data Source=DESKTOP-LAPTOP;Initial Catalog=dbSTUDENTMANAGEMENT;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
 */
@@ -39,7 +39,7 @@ public partial class DbStudentmanagementContext : DbContext
     {
         modelBuilder.Entity<AccountAdmin>(entity =>
         {
-            entity.HasKey(e => e.AccountId).HasName("PK__ACCOUNT___349DA586D7A1ADDD");
+            entity.HasKey(e => e.AccountId).HasName("PK__ACCOUNT___349DA586759385B6");
 
             entity.ToTable("ACCOUNT_ADMIN");
 
@@ -54,18 +54,17 @@ public partial class DbStudentmanagementContext : DbContext
 
         modelBuilder.Entity<Class>(entity =>
         {
-            entity.HasKey(e => e.ClassId).HasName("PK__CLASS__CB1927A03B7DF2C8");
+            entity.HasKey(e => e.ClassId).HasName("PK__CLASS__CB1927A0352A9E74");
 
             entity.ToTable("CLASS");
 
             entity.Property(e => e.ClassId)
-                .HasMaxLength(10)
+                .HasMaxLength(20)
                 .IsUnicode(false)
                 .HasColumnName("ClassID");
             entity.Property(e => e.LecturerId)
-                .HasMaxLength(7)
+                .HasMaxLength(20)
                 .IsUnicode(false)
-                .IsFixedLength()
                 .HasColumnName("LecturerID");
             entity.Property(e => e.Name).HasMaxLength(50);
 
@@ -76,29 +75,27 @@ public partial class DbStudentmanagementContext : DbContext
 
         modelBuilder.Entity<Course>(entity =>
         {
-            entity.HasKey(e => e.CourseId).HasName("PK__COURSE__C92D71872B69AFDB");
+            entity.HasKey(e => e.CourseId).HasName("PK__COURSE__C92D718780EFDB9B");
 
             entity.ToTable("COURSE");
 
             entity.Property(e => e.CourseId)
-                .HasMaxLength(7)
+                .HasMaxLength(20)
                 .IsUnicode(false)
-                .IsFixedLength()
                 .HasColumnName("CourseID");
             entity.Property(e => e.Name).HasMaxLength(50);
         });
 
         modelBuilder.Entity<CourseStudent>(entity =>
         {
-            entity.HasKey(e => new { e.CourseDetailId, e.StudentId }).HasName("PK__COURSE_S__473BADA71462170E");
+            entity.HasKey(e => new { e.CourseDetailId, e.StudentId }).HasName("PK__COURSE_S__473BADA7AB0A5893");
 
             entity.ToTable("COURSE_STUDENT");
 
             entity.Property(e => e.CourseDetailId).HasColumnName("CourseDetailID");
             entity.Property(e => e.StudentId)
-                .HasMaxLength(7)
+                .HasMaxLength(20)
                 .IsUnicode(false)
-                .IsFixedLength()
                 .HasColumnName("StudentID");
 
             entity.HasOne(d => d.CourseDetail).WithMany(p => p.CourseStudents)
@@ -114,20 +111,18 @@ public partial class DbStudentmanagementContext : DbContext
 
         modelBuilder.Entity<Coursedetail>(entity =>
         {
-            entity.HasKey(e => e.CourseDetailId).HasName("PK__COURSEDE__C417FF00AC91C4AB");
+            entity.HasKey(e => e.CourseDetailId).HasName("PK__COURSEDE__C417FF00404DE38B");
 
             entity.ToTable("COURSEDETAILS");
 
             entity.Property(e => e.CourseDetailId).HasColumnName("CourseDetailID");
             entity.Property(e => e.CourseId)
-                .HasMaxLength(7)
+                .HasMaxLength(20)
                 .IsUnicode(false)
-                .IsFixedLength()
                 .HasColumnName("CourseID");
             entity.Property(e => e.LecturerId)
-                .HasMaxLength(7)
+                .HasMaxLength(20)
                 .IsUnicode(false)
-                .IsFixedLength()
                 .HasColumnName("LecturerID");
 
             entity.HasOne(d => d.Course).WithMany(p => p.Coursedetails)
@@ -141,28 +136,26 @@ public partial class DbStudentmanagementContext : DbContext
 
         modelBuilder.Entity<Faculty>(entity =>
         {
-            entity.HasKey(e => e.FacultyId).HasName("PK__FACULTY__306F636ED17F9C3D");
+            entity.HasKey(e => e.FacultyId).HasName("PK__FACULTY__306F636EBA6A7673");
 
             entity.ToTable("FACULTY");
 
             entity.Property(e => e.FacultyId)
-                .HasMaxLength(7)
+                .HasMaxLength(20)
                 .IsUnicode(false)
-                .IsFixedLength()
                 .HasColumnName("FacultyID");
             entity.Property(e => e.Name).HasMaxLength(50);
         });
 
         modelBuilder.Entity<Lecturer>(entity =>
         {
-            entity.HasKey(e => e.LecturerId).HasName("PK__LECTURER__5A78B91DEB00D729");
+            entity.HasKey(e => e.LecturerId).HasName("PK__LECTURER__5A78B91DD708F369");
 
             entity.ToTable("LECTURER");
 
             entity.Property(e => e.LecturerId)
-                .HasMaxLength(7)
+                .HasMaxLength(20)
                 .IsUnicode(false)
-                .IsFixedLength()
                 .HasColumnName("LecturerID");
             entity.Property(e => e.AcademicDegree).HasMaxLength(50);
             entity.Property(e => e.Address).HasMaxLength(50);
@@ -170,9 +163,8 @@ public partial class DbStudentmanagementContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.FacultyId)
-                .HasMaxLength(7)
+                .HasMaxLength(20)
                 .IsUnicode(false)
-                .IsFixedLength()
                 .HasColumnName("FacultyID");
             entity.Property(e => e.Fullname).HasMaxLength(50);
             entity.Property(e => e.Image)
@@ -204,18 +196,17 @@ public partial class DbStudentmanagementContext : DbContext
 
         modelBuilder.Entity<Student>(entity =>
         {
-            entity.HasKey(e => e.StudentId).HasName("PK__STUDENT__32C52A79450EF0B8");
+            entity.HasKey(e => e.StudentId).HasName("PK__STUDENT__32C52A796D4D7A9B");
 
             entity.ToTable("STUDENT");
 
             entity.Property(e => e.StudentId)
-                .HasMaxLength(7)
+                .HasMaxLength(20)
                 .IsUnicode(false)
-                .IsFixedLength()
                 .HasColumnName("StudentID");
             entity.Property(e => e.Address).HasMaxLength(50);
             entity.Property(e => e.ClassId)
-                .HasMaxLength(10)
+                .HasMaxLength(20)
                 .IsUnicode(false)
                 .HasColumnName("ClassID");
             entity.Property(e => e.Email)
