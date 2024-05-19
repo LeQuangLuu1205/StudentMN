@@ -29,6 +29,12 @@ public partial class Lecturer
 
     public string? AcademicDegree { get; set; }
 
+    public int Role { get; set; }
+
+    public bool IsExist { get; set; }
+
+    public string? RandomKey { get; set; }
+
     public string? FacultyId { get; set; }
 
     public virtual ICollection<Class> Classes { get; set; } = new List<Class>();

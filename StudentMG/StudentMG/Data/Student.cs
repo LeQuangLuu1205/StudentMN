@@ -25,6 +25,12 @@ public partial class Student
 
     public string? NoIdentity { get; set; }
 
+    public int Role { get; set; }
+
+    public bool IsExist { get; set; }
+
+    public string? RandomKey { get; set; }
+
     public string? ClassId { get; set; }
 
     public virtual Class? Class { get; set; }

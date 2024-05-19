@@ -1,29 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\Study\\ThCSharp\\StudentManagement\\StudentMN\\StudentMG\\",
+  "WorkspaceRootPath": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|f:\\study\\thcsharp\\studentmanagement\\studentmn\\studentmg\\studentmg\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|solutionrelative:studentmg\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|f:\\study\\thcsharp\\studentmanagement\\v1\\studentmn\\studentmg\\studentmg\\data\\faculty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|solutionrelative:studentmg\\data\\faculty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|f:\\study\\thcsharp\\studentmanagement\\studentmn\\studentmg\\studentmg\\data\\accountadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|solutionrelative:studentmg\\data\\accountadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|f:\\study\\thcsharp\\studentmanagement\\v1\\studentmn\\studentmg\\studentmg\\data\\lecturer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|solutionrelative:studentmg\\data\\lecturer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|f:\\study\\thcsharp\\studentmanagement\\studentmn\\studentmg\\studentmg\\data\\dbstudentmanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|solutionrelative:studentmg\\data\\dbstudentmanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|f:\\study\\thcsharp\\studentmanagement\\v1\\studentmn\\studentmg\\studentmg\\data\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|solutionrelative:studentmg\\data\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|f:\\study\\thcsharp\\studentmanagement\\studentmn\\studentmg\\studentmg\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|f:\\study\\thcsharp\\studentmanagement\\v1\\studentmn\\studentmg\\studentmg\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|solutionrelative:studentmg\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|f:\\study\\thcsharp\\studentmanagement\\studentmn\\studentmg\\studentmg\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|f:\\study\\thcsharp\\studentmanagement\\v1\\studentmn\\studentmg\\studentmg\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|solutionrelative:studentmg\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|f:\\study\\thcsharp\\studentmanagement\\v1\\studentmn\\studentmg\\studentmg\\data\\dbstudentmanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|solutionrelative:studentmg\\data\\dbstudentmanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|f:\\study\\thcsharp\\studentmanagement\\v1\\studentmn\\studentmg\\studentmg\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|solutionrelative:studentmg\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|f:\\study\\thcsharp\\studentmanagement\\studentmn\\studentmg\\studentmg\\studentmg.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|f:\\study\\thcsharp\\studentmanagement\\v1\\studentmn\\studentmg\\studentmg\\studentmg.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{A1FBB9B8-68AF-4A7F-B329-1B5192DDB465}|StudentMG\\StudentMG.csproj|solutionrelative:studentmg\\studentmg.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
@@ -39,72 +47,101 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Faculty.cs",
+              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\Data\\Faculty.cs",
+              "RelativeDocumentMoniker": "StudentMG\\Data\\Faculty.cs",
+              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\Data\\Faculty.cs",
+              "RelativeToolTip": "StudentMG\\Data\\Faculty.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-19T02:33:30.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Lecturer.cs",
+              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\Data\\Lecturer.cs",
+              "RelativeDocumentMoniker": "StudentMG\\Data\\Lecturer.cs",
+              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\Data\\Lecturer.cs",
+              "RelativeToolTip": "StudentMG\\Data\\Lecturer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-19T02:33:28.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Student.cs",
+              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\Data\\Student.cs",
+              "RelativeDocumentMoniker": "StudentMG\\Data\\Student.cs",
+              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\Data\\Student.cs",
+              "RelativeToolTip": "StudentMG\\Data\\Student.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAywAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-19T02:33:24.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DbStudentmanagementContext.cs",
+              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\Data\\DbStudentmanagementContext.cs",
+              "RelativeDocumentMoniker": "StudentMG\\Data\\DbStudentmanagementContext.cs",
+              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\Data\\DbStudentmanagementContext.cs",
+              "RelativeToolTip": "StudentMG\\Data\\DbStudentmanagementContext.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwCYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-19T02:31:07.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\StudentMN\\StudentMG\\StudentMG\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "StudentMG\\Controllers\\HomeController.cs",
-              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\StudentMN\\StudentMG\\StudentMG\\Controllers\\HomeController.cs",
+              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\Controllers\\HomeController.cs",
               "RelativeToolTip": "StudentMG\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBIAAAAJAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-17T02:02:15.855Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AccountAdmin.cs",
-              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\StudentMN\\StudentMG\\StudentMG\\Data\\AccountAdmin.cs",
-              "RelativeDocumentMoniker": "StudentMG\\Data\\AccountAdmin.cs",
-              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\StudentMN\\StudentMG\\StudentMG\\Data\\AccountAdmin.cs",
-              "RelativeToolTip": "StudentMG\\Data\\AccountAdmin.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\Program.cs",
+              "RelativeDocumentMoniker": "StudentMG\\Program.cs",
+              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\Program.cs",
+              "RelativeToolTip": "StudentMG\\Program.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T01:55:55.716Z",
+              "WhenOpened": "2024-05-11T16:46:18.082Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DbStudentmanagementContext.cs",
-              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\StudentMN\\StudentMG\\StudentMG\\Data\\DbStudentmanagementContext.cs",
-              "RelativeDocumentMoniker": "StudentMG\\Data\\DbStudentmanagementContext.cs",
-              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\StudentMN\\StudentMG\\StudentMG\\Data\\DbStudentmanagementContext.cs",
-              "RelativeToolTip": "StudentMG\\Data\\DbStudentmanagementContext.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAYwCQAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T16:52:01.208Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\StudentMN\\StudentMG\\StudentMG\\Program.cs",
-              "RelativeDocumentMoniker": "StudentMG\\Program.cs",
-              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\StudentMN\\StudentMG\\StudentMG\\Program.cs",
-              "RelativeToolTip": "StudentMG\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T16:46:18.082Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
-              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\StudentMN\\StudentMG\\StudentMG\\appsettings.json",
+              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\appsettings.json",
               "RelativeDocumentMoniker": "StudentMG\\appsettings.json",
-              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\StudentMN\\StudentMG\\StudentMG\\appsettings.json",
+              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\appsettings.json",
               "RelativeToolTip": "StudentMG\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-11T16:44:12.133Z"
+              "WhenOpened": "2024-05-11T16:44:12.133Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "StudentMG.csproj",
-              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\StudentMN\\StudentMG\\StudentMG\\StudentMG.csproj",
+              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\StudentMG.csproj",
               "RelativeDocumentMoniker": "StudentMG\\StudentMG.csproj",
-              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\StudentMN\\StudentMG\\StudentMG\\StudentMG.csproj",
+              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\StudentMG.csproj",
               "RelativeToolTip": "StudentMG\\StudentMG.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
