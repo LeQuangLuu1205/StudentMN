@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using StudentMG.Data;
+using StudentMG.Helpers;
 
 
 
@@ -10,8 +12,16 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<DbStudentmanagementContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("StuManagemetnDB"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("StuManagementDB"));
 });
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
+    options =>
+    {
+        options.LoginPath = "/Student/Login";
+        options.AccessDeniedPath = "/AccessDenied";
+    });
+
+/*builder.Services.AddAutoMapper(typeof(AutoMapperProfile));*/
 
 var app = builder.Build();
 
@@ -27,7 +37,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
