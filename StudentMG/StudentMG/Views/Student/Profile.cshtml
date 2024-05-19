@@ -1,10 +1,10 @@
 ﻿
 @{
     ViewData["Title"] = "Profile";
+    ViewData["Fullname"] = @Context.User.Identity.Name;
+    ViewData["Role"] = "Sinh viên";
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
 }
 
-<h1>Profile</h1>
-<div class="container">
-	<h2>Welcome @Context.User.Identity.Name</h2>
-	<a asp-action="Logout">Đăng xuất</a>
-</div>
+<h1>Hi</h1>
+
