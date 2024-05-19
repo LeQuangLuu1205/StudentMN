@@ -757,3 +757,5 @@ F:\Study\ThCSharp\StudentManagement\v2\StudentMN\StudentMG\StudentMG\obj\Debug\n
 F:\Study\ThCSharp\StudentManagement\v2\StudentMN\StudentMG\StudentMG\obj\Debug\net8.0\StudentMG.pdb
 F:\Study\ThCSharp\StudentManagement\v2\StudentMN\StudentMG\StudentMG\obj\Debug\net8.0\StudentMG.genruntimeconfig.cache
 F:\Study\ThCSharp\StudentManagement\v2\StudentMN\StudentMG\StudentMG\obj\Debug\net8.0\ref\StudentMG.dll
+F:\Study\ThCSharp\StudentManagement\v2\StudentMN\StudentMG\StudentMG\bin\Debug\net8.0\AutoMapper.dll
+F:\Study\ThCSharp\StudentManagement\v2\StudentMN\StudentMG\StudentMG\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
