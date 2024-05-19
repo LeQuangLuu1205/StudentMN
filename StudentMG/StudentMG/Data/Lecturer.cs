@@ -19,8 +19,6 @@ public partial class Lecturer
 
     public DateOnly? DoB { get; set; }
 
-    public string? Image { get; set; }
-
     public bool? Gender { get; set; }
 
     public string? Address { get; set; }

@@ -27,9 +27,13 @@ public partial class DbStudentmanagementContext : DbContext
 
     public virtual DbSet<Faculty> Faculties { get; set; }
 
+    public virtual DbSet<Kindofimage> Kindofimages { get; set; }
+
     public virtual DbSet<Lecturer> Lecturers { get; set; }
 
     public virtual DbSet<Student> Students { get; set; }
+
+    public virtual DbSet<StudentImage> StudentImages { get; set; }
 
 /*    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -39,7 +43,7 @@ public partial class DbStudentmanagementContext : DbContext
     {
         modelBuilder.Entity<AccountAdmin>(entity =>
         {
-            entity.HasKey(e => e.AccountId).HasName("PK__ACCOUNT___349DA586759385B6");
+            entity.HasKey(e => e.AccountId).HasName("PK__ACCOUNT___349DA5868148079F");
 
             entity.ToTable("ACCOUNT_ADMIN");
 
@@ -54,7 +58,7 @@ public partial class DbStudentmanagementContext : DbContext
 
         modelBuilder.Entity<Class>(entity =>
         {
-            entity.HasKey(e => e.ClassId).HasName("PK__CLASS__CB1927A0352A9E74");
+            entity.HasKey(e => e.ClassId).HasName("PK__CLASS__CB1927A0BAFF92F4");
 
             entity.ToTable("CLASS");
 
@@ -75,7 +79,7 @@ public partial class DbStudentmanagementContext : DbContext
 
         modelBuilder.Entity<Course>(entity =>
         {
-            entity.HasKey(e => e.CourseId).HasName("PK__COURSE__C92D718780EFDB9B");
+            entity.HasKey(e => e.CourseId).HasName("PK__COURSE__C92D71876001D46A");
 
             entity.ToTable("COURSE");
 
@@ -88,7 +92,7 @@ public partial class DbStudentmanagementContext : DbContext
 
         modelBuilder.Entity<CourseStudent>(entity =>
         {
-            entity.HasKey(e => new { e.CourseDetailId, e.StudentId }).HasName("PK__COURSE_S__473BADA7AB0A5893");
+            entity.HasKey(e => new { e.CourseDetailId, e.StudentId }).HasName("PK__COURSE_S__473BADA716651A07");
 
             entity.ToTable("COURSE_STUDENT");
 
@@ -111,7 +115,7 @@ public partial class DbStudentmanagementContext : DbContext
 
         modelBuilder.Entity<Coursedetail>(entity =>
         {
-            entity.HasKey(e => e.CourseDetailId).HasName("PK__COURSEDE__C417FF00404DE38B");
+            entity.HasKey(e => e.CourseDetailId).HasName("PK__COURSEDE__C417FF001AD1615A");
 
             entity.ToTable("COURSEDETAILS");
 
@@ -136,7 +140,7 @@ public partial class DbStudentmanagementContext : DbContext
 
         modelBuilder.Entity<Faculty>(entity =>
         {
-            entity.HasKey(e => e.FacultyId).HasName("PK__FACULTY__306F636EBA6A7673");
+            entity.HasKey(e => e.FacultyId).HasName("PK__FACULTY__306F636E1EFC8A80");
 
             entity.ToTable("FACULTY");
 
@@ -147,9 +151,19 @@ public partial class DbStudentmanagementContext : DbContext
             entity.Property(e => e.Name).HasMaxLength(50);
         });
 
+        modelBuilder.Entity<Kindofimage>(entity =>
+        {
+            entity.HasKey(e => e.ImageId).HasName("PK__KINDOFIM__7516F4EC39AC34BA");
+
+            entity.ToTable("KINDOFIMAGE");
+
+            entity.Property(e => e.ImageId).HasColumnName("ImageID");
+            entity.Property(e => e.Name).HasMaxLength(50);
+        });
+
         modelBuilder.Entity<Lecturer>(entity =>
         {
-            entity.HasKey(e => e.LecturerId).HasName("PK__LECTURER__5A78B91DD708F369");
+            entity.HasKey(e => e.LecturerId).HasName("PK__LECTURER__5A78B91D8DA28420");
 
             entity.ToTable("LECTURER");
 
@@ -167,9 +181,6 @@ public partial class DbStudentmanagementContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("FacultyID");
             entity.Property(e => e.Fullname).HasMaxLength(50);
-            entity.Property(e => e.Image)
-                .HasMaxLength(50)
-                .IsUnicode(false);
             entity.Property(e => e.IsExist).HasColumnName("isExist");
             entity.Property(e => e.NoIdentity)
                 .HasMaxLength(11)
@@ -196,7 +207,7 @@ public partial class DbStudentmanagementContext : DbContext
 
         modelBuilder.Entity<Student>(entity =>
         {
-            entity.HasKey(e => e.StudentId).HasName("PK__STUDENT__32C52A796D4D7A9B");
+            entity.HasKey(e => e.StudentId).HasName("PK__STUDENT__32C52A79BAED41D9");
 
             entity.ToTable("STUDENT");
 
@@ -235,6 +246,32 @@ public partial class DbStudentmanagementContext : DbContext
             entity.HasOne(d => d.Class).WithMany(p => p.Students)
                 .HasForeignKey(d => d.ClassId)
                 .HasConstraintName("FK_tbSTUDENT_tbCLASS");
+        });
+
+        modelBuilder.Entity<StudentImage>(entity =>
+        {
+            entity.HasKey(e => new { e.StudentId, e.ImageId }).HasName("PK__STUDENT___E59445371DDBB71C");
+
+            entity.ToTable("STUDENT_IMAGE");
+
+            entity.Property(e => e.StudentId)
+                .HasMaxLength(20)
+                .IsUnicode(false)
+                .HasColumnName("StudentID");
+            entity.Property(e => e.ImageId).HasColumnName("ImageID");
+            entity.Property(e => e.Source)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+
+            entity.HasOne(d => d.Image).WithMany(p => p.StudentImages)
+                .HasForeignKey(d => d.ImageId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_tbSTUDENT_IMAGE_tbKINDOFIMAGE");
+
+            entity.HasOne(d => d.Student).WithMany(p => p.StudentImages)
+                .HasForeignKey(d => d.StudentId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_tbSTUDENT_IMAGE_tbSTUDENT");
         });
 
         OnModelCreatingPartial(modelBuilder);

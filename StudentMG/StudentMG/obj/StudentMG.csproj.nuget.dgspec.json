@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\StudentMG.csproj": {}
+    "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\StudentMG.csproj": {}
   },
   "projects": {
-    "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\StudentMG.csproj": {
+    "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\StudentMG.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\StudentMG.csproj",
+        "projectUniqueName": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\StudentMG.csproj",
         "projectName": "StudentMG",
-        "projectPath": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\StudentMG.csproj",
+        "projectPath": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\StudentMG.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "F:\\Study\\ThCSharp\\StudentManagement\\v1\\StudentMN\\StudentMG\\StudentMG\\obj\\",
+        "outputPath": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",

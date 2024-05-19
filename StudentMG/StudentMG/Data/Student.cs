@@ -36,4 +36,6 @@ public partial class Student
     public virtual Class? Class { get; set; }
 
     public virtual ICollection<CourseStudent> CourseStudents { get; set; } = new List<CourseStudent>();
+
+    public virtual ICollection<StudentImage> StudentImages { get; set; } = new List<StudentImage>();
 }
