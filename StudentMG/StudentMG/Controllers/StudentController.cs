@@ -3,10 +3,13 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 using StudentMG.Data;
 using StudentMG.Helpers;
 using StudentMG.ViewModels;
+using System.Net;
 using System.Security.Claims;
+using System.Security.Principal;
 
 namespace StudentMG.Controllers
 {
@@ -18,7 +21,7 @@ namespace StudentMG.Controllers
             db = context;
         }
 
-         #region
+        #region Login
          [HttpGet]
          public IActionResult Login(string? ReturnUrl)
          {
@@ -76,9 +79,10 @@ namespace StudentMG.Controllers
              }
              return View();
          }
-		#endregion
+        #endregion
 
-		[Authorize]
+        #region Logout
+        [Authorize]
 		public IActionResult Profile()
          {
 
@@ -91,5 +95,38 @@ namespace StudentMG.Controllers
 			await HttpContext.SignOutAsync();
 			return Redirect("/");
 		}
-	}
+        #endregion
+
+        #region Update Info
+        [HttpGet]
+        public async Task<IActionResult> Update(string id)
+        {
+            Student st = db.Students.Find(id);
+            
+           StudentInfoVM studentEdit= new StudentInfoVM(
+                st.StudentId,
+                st.Fullname,st.Email,st.PhoneNumber,st.DoB,
+                st.Address,st.NoIdentity);
+         
+
+            return View(studentEdit);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(StudentInfoVM model) 
+        {
+            if (ModelState.IsValid)
+            {
+                Student st = db.Students.Find(model.StudentId);
+                st.Fullname = model.Fullname;
+                st.Email = model.Email;
+                st.PhoneNumber = model.PhoneNumber;
+                st.DoB = model.DoB;
+                st.Address = model.Address;
+                st.NoIdentity = model.NoIdentity;
+                db.SaveChanges();
+            }
+            return RedirectToAction("Profile","Student");
+        }
+        #endregion
+    }
 }
