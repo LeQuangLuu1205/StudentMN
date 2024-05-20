@@ -28,9 +28,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Source)
-            </td>
+                <td>
+                    <img src="@Url.Content("~/assets/img/info/" + item.Source)" alt="Image" width="150" height="150" />
+                </td>
             <td>
                 <a asp-action="EditImage" asp-route-id="@item.No">Edit</a> |
                 <a asp-action="DetailsImage" asp-route-id="@item.No">Details</a> |
@@ -40,3 +40,5 @@
 }
     </tbody>
 </table>
+
+
