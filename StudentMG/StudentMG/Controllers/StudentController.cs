@@ -125,5 +125,55 @@ namespace StudentMG.Controllers
             return RedirectToAction("Profile", "Student");
         }
         #endregion
+
+        #region show grade
+        
+        public async Task<IActionResult> ShowGrade(string searchString)
+        {
+            var identity = (ClaimsIdentity)User.Identity;
+            var maSinhVienClaim = identity.FindFirst("MaSinhVien");
+            var maSinhVien = maSinhVienClaim != null ? maSinhVienClaim.Value : "Not Available";
+            List<StudentGradeVM> studentGrades;
+
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                studentGrades = (from cs in db.CourseStudents
+                                 join cd in db.Coursedetails on cs.CourseDetailId equals cd.CourseDetailId
+                                 join c in db.Courses on cd.CourseId equals c.CourseId
+                                 where cs.StudentId == maSinhVien && c.Name.Contains(searchString)
+                                 select new StudentGradeVM
+                                 {
+                                     Name = c.Name,
+                                     NoCredits = c.NoCredits,
+                                     Grade = cs.Grade
+                                 }).ToList();
+            }
+            else
+            {
+                studentGrades = (from cs in db.CourseStudents
+                                 join cd in db.Coursedetails on cs.CourseDetailId equals cd.CourseDetailId
+                                 join c in db.Courses on cd.CourseId equals c.CourseId
+                                 where cs.StudentId == maSinhVien
+                                 select new StudentGradeVM
+                                 {
+                                     Name = c.Name,
+                                     NoCredits = c.NoCredits,
+                                     Grade = cs.Grade
+                                 }).ToList();
+            }
+
+            var list = studentGrades
+            .Select((grade, index) => new GradeVM
+            {
+                No = index + 1,
+                Name = grade.Name,
+                NoCredits = grade.NoCredits,
+                Grade = grade.Grade
+            }).ToList();
+
+            return View(list);
+        }
+        #endregion
     }
 }

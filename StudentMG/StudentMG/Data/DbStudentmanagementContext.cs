@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using StudentMG.ViewModels;
 
 namespace StudentMG.Data;
 
@@ -278,4 +279,6 @@ public partial class DbStudentmanagementContext : DbContext
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+public DbSet<StudentMG.ViewModels.GradeVM> GradeVM { get; set; } = default!;
 }
