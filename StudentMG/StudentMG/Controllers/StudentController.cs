@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using StudentMG.Data;
 using StudentMG.Helpers;
 using StudentMG.ViewModels;
@@ -127,7 +128,6 @@ namespace StudentMG.Controllers
         #endregion
 
         #region show grade
-        
         public async Task<IActionResult> ShowGrade(string searchString)
         {
             var identity = (ClaimsIdentity)User.Identity;
@@ -175,5 +175,40 @@ namespace StudentMG.Controllers
             return View(list);
         }
         #endregion
+
+        #region image managemnet
+        public async Task<IActionResult> ShowListImage()
+        {
+            var identity = (ClaimsIdentity)User.Identity;
+            var maSinhVienClaim = identity.FindFirst("MaSinhVien");
+            var maSinhVien = maSinhVienClaim != null ? maSinhVienClaim.Value : "Not Available";
+            List<ImageTempVM> imagelist;
+            imagelist = (from si in db.StudentImages
+                            join k in db.Kindofimages on si.ImageId equals k.ImageId
+                            where si.StudentId == maSinhVien
+                            select new ImageTempVM 
+                            {
+                                Name = k.Name,
+                                Source = si.Source
+                            }).ToList();
+            var list = imagelist
+            .Select((image, index) => new ImageVM
+            {
+                No = index + 1,
+                Name = image.Name,
+                Source = image.Source,
+            }).ToList();
+            return View(list);
+        }
+
+        #endregion
+
+        #region edit image
+        public async Task<IActionResult> EditImage()
+        {
+            return View();
+        }
+        #endregion
+
     }
 }
