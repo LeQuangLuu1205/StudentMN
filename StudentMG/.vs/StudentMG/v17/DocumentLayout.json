@@ -100,7 +100,7 @@
               "RelativeDocumentMoniker": "StudentMG\\Views\\Student\\Update.cshtml",
               "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\Views\\Student\\Update.cshtml",
               "RelativeToolTip": "StudentMG\\Views\\Student\\Update.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAIAAAARAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABUAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-19T18:44:57.902Z",
               "EditorCaption": ""
@@ -115,8 +115,7 @@
               "RelativeToolTip": "StudentMG\\ViewModels\\StudentInfoVM.cs",
               "ViewState": "AQIAABUAAAAAAAAAAAAawCsAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T16:01:28.154Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-19T16:01:28.154Z"
             },
             {
               "$type": "Document",
@@ -128,8 +127,7 @@
               "RelativeToolTip": "StudentMG\\Controllers\\StudentController.cs",
               "ViewState": "AQIAAHQAAAAAAAAAAADwv38AAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T13:07:22.719Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-19T13:07:22.719Z"
             },
             {
               "$type": "Document",
@@ -141,8 +139,7 @@
               "RelativeToolTip": "StudentMG\\Views\\Student\\Login.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-19T13:34:44.688Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-19T13:34:44.688Z"
             },
             {
               "$type": "Document",
@@ -154,8 +151,7 @@
               "RelativeToolTip": "StudentMG\\Views\\Student\\Profile.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-19T15:06:58.933Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-19T15:06:58.933Z"
             },
             {
               "$type": "Document",
@@ -167,8 +163,7 @@
               "RelativeToolTip": "StudentMG\\ViewModels\\LoginVM.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T13:04:01.033Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-19T13:04:01.033Z"
             },
             {
               "$type": "Document",
@@ -180,8 +175,7 @@
               "RelativeToolTip": "StudentMG\\Views\\Shared\\_LayoutStudent.cshtml",
               "ViewState": "AQIAANEAAAAAAAAAAAAMwOMAAABaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-19T14:40:18.307Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-19T14:40:18.307Z"
             },
             {
               "$type": "Document",
@@ -205,8 +199,7 @@
               "RelativeToolTip": "StudentMG\\Controllers\\HomeController.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAQwBAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T02:02:15.855Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-17T02:02:15.855Z"
             },
             {
               "$type": "Document",
@@ -326,8 +319,7 @@
               "RelativeToolTip": "StudentMG\\Data\\DbStudentmanagementContext.cs",
               "ViewState": "AQIAACMAAAAAAAAAAAA7wC8AAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T09:49:36.754Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-19T09:49:36.754Z"
             },
             {
               "$type": "Document",
