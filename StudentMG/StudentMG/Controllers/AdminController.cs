@@ -40,8 +40,15 @@ namespace StudentMG.Controllers
         }
         #endregion
 
-        #region
+        #region Dashboard()
         public IActionResult Dashboard()
+        {
+            return View();
+        }
+        #endregion
+
+        #region
+        public IActionResult ShowStudentList()
         {
             return View();
         }
