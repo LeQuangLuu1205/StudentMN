@@ -1,0 +1,42 @@
+﻿@model IEnumerable<StudentMG.ViewModels.ImageVM>
+
+@{
+    ViewData["Title"] = "ShowListImage";
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<h1>ShowListImage</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Source)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+                <td>
+                    <img src="@Url.Content("~/assets/img/info/" + item.Source)" alt="Image" width="150" height="150" />
+                </td>
+            <td>
+                <a asp-action="EditImage" asp-route-id="@item.No">Chỉnh sửa</a> |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+

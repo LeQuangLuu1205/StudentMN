@@ -841,6 +841,18 @@
       "PackagePath": "staticwebassets\\assets\\img\\home-right-admin-img.png"
     },
     {
+      "Id": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\wwwroot\\assets\\img\\info\\495c61b0-3c03-49a2-a652-2f81c468132d_thesv4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\info\\495c61b0-3c03-49a2-a652-2f81c468132d_thesv4.jpg"
+    },
+    {
+      "Id": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\wwwroot\\assets\\img\\info\\anhthe4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\info\\anhthe4.jpg"
+    },
+    {
+      "Id": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\wwwroot\\assets\\img\\info\\cmnd4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\info\\cmnd4.jpg"
+    },
+    {
       "Id": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\wwwroot\\assets\\img\\jd-150.png",
       "PackagePath": "staticwebassets\\assets\\img\\jd-150.png"
     },
@@ -8039,6 +8051,10 @@
     {
       "Id": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\wwwroot\\js\\Preview.js",
+      "PackagePath": "staticwebassets\\js\\Preview.js"
     },
     {
       "Id": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\wwwroot\\js\\site.js",

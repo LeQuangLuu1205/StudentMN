@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-<html>
+<html lang="vi">
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
@@ -226,7 +226,7 @@
                                 </a>
                                 <ul class="children" id="dashboard">
                                     <li class="child"><a class="ml-4" asp-route-id="@ViewBag.ID" asp-action="Update" asp-controller="Student"><i class="fa fa-angle-right mr-2"></i> Cập nhật thông tin</a></li>
-                                    <li class="child"><a href="profile.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Cập nhật ảnh</a></li>
+                                    <li class="child"><a class="ml-4" asp-action="ShowListImage" asp-controller="Student"><i class="fa fa-angle-right mr-2"></i> Cập nhật ảnh</a></li>
                                 </ul>
                             </li>
                             </li>
@@ -305,5 +305,6 @@
         //Nice select
         $('.bulk-actions').niceSelect();
     </script>
+    @RenderSection("scripts", required: false)
 </body>
 </html>

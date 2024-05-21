@@ -281,4 +281,6 @@ public partial class DbStudentmanagementContext : DbContext
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
 public DbSet<StudentMG.ViewModels.GradeVM> GradeVM { get; set; } = default!;
+
+public DbSet<StudentMG.ViewModels.ImageVM> ImageVM { get; set; } = default!;
 }
