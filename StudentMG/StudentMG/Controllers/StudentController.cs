@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.Elfie.Model.Tree;
 using Microsoft.EntityFrameworkCore;
 using StudentMG.Data;
 using StudentMG.Helpers;
@@ -14,9 +15,11 @@ namespace StudentMG.Controllers
     public class StudentController : Controller
     {
         private readonly DbStudentmanagementContext db;
-        public StudentController(DbStudentmanagementContext context)
+        private readonly IWebHostEnvironment environment;
+        public StudentController(DbStudentmanagementContext context, IWebHostEnvironment environment)
         {
             db = context;
+            this.environment = environment;
         }
 
         #region Login
@@ -204,9 +207,68 @@ namespace StudentMG.Controllers
         #endregion
 
         #region edit image
-        public async Task<IActionResult> EditImage()
+        public async Task<IActionResult> EditImage(int id)
         {
-            return View();
+            var identity = (ClaimsIdentity)User.Identity;
+            var maSinhVienClaim = identity.FindFirst("MaSinhVien");
+            var maSinhVien = maSinhVienClaim != null ? maSinhVienClaim.Value : "Not Available";
+            List<ImageTempVM> imagelist;
+            imagelist = (from si in db.StudentImages
+                         join k in db.Kindofimages on si.ImageId equals k.ImageId
+                         where si.StudentId == maSinhVien
+                         select new ImageTempVM
+                         {
+                             Name = k.Name,
+                             Source = si.Source
+                         }).ToList();
+            var list = imagelist
+            .Select((image, index) => new ImageVM
+            {
+                No = index + 1,
+                Name = image.Name,
+                Source = image.Source,
+            }).ToList();
+            var data = list.FirstOrDefault(image => image.No == id);
+
+                return View(data);
+        }
+        
+        [HttpPost]
+        public IActionResult EditImage(ImageVM model)
+        {
+            var identity = (ClaimsIdentity)User.Identity;
+            var maSinhVienClaim = identity.FindFirst("MaSinhVien");
+            var maSinhVien = maSinhVienClaim != null ? maSinhVienClaim.Value : "Not Available";
+            var data = db.StudentImages.Where(e => e.StudentId == maSinhVien && e.ImageId == model.No).SingleOrDefault();
+            string uniqueFileName = string.Empty;
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (model.Source!=null)
+                    {
+                        string filepath = Path.Combine(environment.WebRootPath, "assets/img/info", data.Source);
+                        if (System.IO.File.Exists(filepath))
+                        {
+                            System.IO.File.Delete(filepath);
+                        }
+                        string uploadFolder = Path.Combine(environment.WebRootPath, "assets/img/info/");
+                        uniqueFileName = Guid.NewGuid().ToString()+ "_"+model.Source;
+                        String filepath2 = Path.Combine(uploadFolder, uniqueFileName);
+                        var fileStream = new FileStream(filepath2, FileMode.Create);
+                        
+                    }
+                    data.Source = model.Source;
+                    data.StudentId = maSinhVien;
+                    data.ImageId = model.No;
+                    db.StudentImages.Update(data);
+                    db.SaveChanges();
+                }
+            } catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+            }
+            return RedirectToAction("ShowListImage","Student");
         }
         #endregion
 
