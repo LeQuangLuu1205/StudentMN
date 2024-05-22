@@ -66,7 +66,8 @@ namespace StudentMG.Controllers
             return View(list2);
            
         }
-        #endregion create a student
+        #endregion
+        #region create a student
         [HttpGet]
         public IActionResult Create()
         {
@@ -105,5 +106,28 @@ namespace StudentMG.Controllers
 
             return RedirectToAction("ShowStudentList","Admin");
         }
+        #endregion
+        #region delete student
+        public IActionResult Delete(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            } else
+            {
+                Student student = db.Students.Find(id);
+                if (student == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    db.Students.Remove(student);
+                    db.SaveChanges();
+                }
+            }
+            return RedirectToAction("ShowStudentList", "Admin");
+        }
+        #endregion
     }
 }
