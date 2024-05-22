@@ -1,0 +1,84 @@
+﻿@model StudentMG.ViewModels.Student2VM
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="@Model.Student.StudentId"></label>
+        <input asp-for="@Model.Student.StudentId" class="form-control" />
+        <span asp-validation-for="@Model.Student.StudentId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Student.Username"></label>
+        <input asp-for="@Model.Student.Username" class="form-control" />
+        <span asp-validation-for="@Model.Student.Username" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Student.Password"></label>
+        <input asp-for="@Model.Student.Password" class="form-control" />
+        <span asp-validation-for="@Model.Student.Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Student.Fullname"></label>
+        <input asp-for="@Model.Student.Fullname" class="form-control" />
+        <span asp-validation-for="@Model.Student.Fullname" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Student.Email"></label>
+        <input asp-for="@Model.Student.Email" class="form-control" />
+        <span asp-validation-for="@Model.Student.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Student.PhoneNumber"></label>
+        <input asp-for="@Model.Student.PhoneNumber" class="form-control" />
+        <span asp-validation-for="@Model.Student.PhoneNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Student.DoB"></label>
+        <input asp-for="@Model.Student.DoB" class="form-control" type="date" />
+        <span asp-validation-for="@Model.Student.DoB" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Student.Gender"></label>
+        <select asp-for="@Model.Student.Gender" class="form-control">
+            <option value="">Select Gender</option>
+            <option value="true">Male</option>
+            <option value="false">Female</option>
+        </select>
+        <span asp-validation-for="Student.Gender" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Student.Address"></label>
+        <input asp-for="@Model.Student.Address" class="form-control" />
+        <span asp-validation-for="@Model.Student.Address" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Student.NoIdentity"></label>
+        <input asp-for="@Model.Student.NoIdentity" class="form-control" />
+        <span asp-validation-for="@Model.Student.NoIdentity" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Student.Role"></label>
+        <input asp-for="@Model.Student.Role" class="form-control" />
+        <span asp-validation-for="@Model.Student.Role" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Student.IsExist"></label>
+        <input asp-for="@Model.Student.IsExist" class="form-control" />
+        <span asp-validation-for="@Model.Student.IsExist" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Student.RandomKey"></label>
+        <input asp-for="@Model.Student.RandomKey" class="form-control" />
+        <span asp-validation-for="@Model.Student.RandomKey" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Student.ClassId"></label>
+        <select asp-for="@Model.Student.ClassId" class="form-control" asp-items="Model.Classes">
+            <option value="">Select Class</option>
+        </select>
+        <span asp-validation-for="@Model.Student.ClassId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 using StudentMG.Data;
 using StudentMG.ViewModels;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using StudentMG.Helpers;
 
 namespace StudentMG.Controllers
 {
@@ -47,7 +50,7 @@ namespace StudentMG.Controllers
         }
         #endregion
 
-        #region
+        #region Show list student
         public IActionResult ShowStudentList()
         {
             var list = db.Students.ToList();
@@ -62,7 +65,45 @@ namespace StudentMG.Controllers
             }).ToList();
             return View(list2);
            
-    }
-        #endregion
+        }
+        #endregion create a student
+        [HttpGet]
+        public IActionResult Create()
+        {
+            var viewModel = new Student2VM
+            {
+                Classes = db.Classes.Select(c => new SelectListItem
+                {
+                    Value = c.ClassId,
+                    Text = c.Name
+                }).ToList()
+            };
+
+            return View(viewModel);
+           
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(Student2VM model)
+        {
+           
+
+            if (ModelState.IsValid)
+            {
+                model.Student.RandomKey = MyUtil.GenerateRandomkey();
+                model.Student.Password = model.Student.Password.ToMd5Hash(model.Student.RandomKey);
+                db.Students.Add(model.Student);
+                await db.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+
+            // Nếu có lỗi, nạp lại danh sách Classes
+            model.Classes = db.Classes.Select(c => new SelectListItem
+            {
+                Value = c.ClassId,
+                Text = c.Name
+            }).ToList();
+
+            return RedirectToAction("ShowStudentList","Admin");
+        }
     }
 }
