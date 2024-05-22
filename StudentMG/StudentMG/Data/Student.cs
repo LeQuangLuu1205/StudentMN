@@ -22,7 +22,7 @@ public partial class Student
     [RegularExpression(@"^(090|098|091|031|035|038)\d{7}$", ErrorMessage = "Số điện thoại phải có độ dài 10 ký tự và bắt đầu bằng 090, 098, 091, 031, 035 hoặc 038.")]
     public string? PhoneNumber { get; set; }
 
-    [CustomValidation(typeof(Student), nameof(ValidateDateFormat))]
+    
     public DateOnly? DoB { get; set; }
 
     public bool? Gender { get; set; }
@@ -45,20 +45,5 @@ public partial class Student
 
     public virtual ICollection<StudentImage> StudentImages { get; set; } = new List<StudentImage>();
 
-    // Custom validation method for DoB
-    public static ValidationResult? ValidateDateFormat(DateOnly? date, ValidationContext context)
-    {
-        if (date == null)
-        {
-            return ValidationResult.Success;
-        }
-
-        var dateString = date.Value.ToString("dd/MM/yyyy");
-        if (DateOnly.TryParseExact(dateString, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out _))
-        {
-            return ValidationResult.Success;
-        }
-
-        return new ValidationResult("Ngày sinh phải theo định dạng dd/MM/yyyy.");
-    }
+   
 }

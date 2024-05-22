@@ -105,17 +105,19 @@ namespace StudentMG.Controllers
                 model.Student.RandomKey = MyUtil.GenerateRandomkey();
                 model.Student.Password = model.Student.Password.ToMd5Hash(model.Student.RandomKey);
                 db.Students.Add(model.Student);
-                await db.SaveChangesAsync();
+                db.SaveChangesAsync();
+                return RedirectToAction("ShowStudentList", "Admin");
+            } else
+            {
+                // Nếu có lỗi, nạp lại danh sách Classes
+                model.Classes = db.Classes.Select(c => new SelectListItem
+                {
+                    Value = c.ClassId,
+                    Text = c.Name
+                }).ToList();
+                return View(model);
             }
 
-            // Nếu có lỗi, nạp lại danh sách Classes
-            model.Classes = db.Classes.Select(c => new SelectListItem
-            {
-                Value = c.ClassId,
-                Text = c.Name
-            }).ToList();
-
-            return RedirectToAction("ShowStudentList", "Admin");
         }
         #endregion
         #region delete student
