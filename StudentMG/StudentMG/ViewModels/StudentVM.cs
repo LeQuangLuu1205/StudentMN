@@ -16,5 +16,18 @@ namespace StudentMG.ViewModels
 
         public string? PhoneNumber { get; set; }
 
+        public StudentVM(string studentId, string? username, string? password, string? fullname, string? email, string? phoneNumber)
+        {
+            StudentId = studentId;
+            Username = username;
+            Password = password;
+            Fullname = fullname;
+            Email = email;
+            PhoneNumber = phoneNumber;
+        }
+
+        public StudentVM()
+        {
+        }
     }
 }

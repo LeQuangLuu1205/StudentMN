@@ -7,6 +7,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using StudentMG.Helpers;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 
 namespace StudentMG.Controllers
 {
@@ -29,17 +30,17 @@ namespace StudentMG.Controllers
         {
             if (ModelState.IsValid)
             {
-                var acc = db.AccountAdmins.SingleOrDefault(ad => ad.Username == model.Username && ad.Password== model.Password);
+                var acc = db.AccountAdmins.SingleOrDefault(ad => ad.Username == model.Username && ad.Password == model.Password);
                 if (acc == null)
                 {
-                    ModelState.AddModelError("loi", "Không có tài khỏan này");  
+                    ModelState.AddModelError("loi", "Không có tài khỏan này");
                 }
                 else
                 {
                     return RedirectToAction("Dashboard", "Admin");
                 }
             }
-                return View();
+            return View();
         }
         #endregion
 
@@ -64,7 +65,7 @@ namespace StudentMG.Controllers
                 PhoneNumber = s.PhoneNumber
             }).ToList();
             return View(list2);
-           
+
         }
         #endregion
         #region create a student
@@ -81,12 +82,12 @@ namespace StudentMG.Controllers
             };
 
             return View(viewModel);
-           
+
         }
         [HttpPost]
         public async Task<IActionResult> Create(Student2VM model)
         {
-           
+
 
             if (ModelState.IsValid)
             {
@@ -94,7 +95,6 @@ namespace StudentMG.Controllers
                 model.Student.Password = model.Student.Password.ToMd5Hash(model.Student.RandomKey);
                 db.Students.Add(model.Student);
                 await db.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
             }
 
             // Nếu có lỗi, nạp lại danh sách Classes
@@ -104,7 +104,7 @@ namespace StudentMG.Controllers
                 Text = c.Name
             }).ToList();
 
-            return RedirectToAction("ShowStudentList","Admin");
+            return RedirectToAction("ShowStudentList", "Admin");
         }
         #endregion
         #region delete student
@@ -113,7 +113,8 @@ namespace StudentMG.Controllers
             if (id == null)
             {
                 return NotFound();
-            } else
+            }
+            else
             {
                 Student student = db.Students.Find(id);
                 if (student == null)
@@ -126,6 +127,52 @@ namespace StudentMG.Controllers
                     db.SaveChanges();
                 }
             }
+            return RedirectToAction("ShowStudentList", "Admin");
+        }
+        #endregion
+        #region edit student
+        public async Task<IActionResult> Edit(string id)
+        {
+            Student student = db.Students.Find(id);
+            StudentInfoVM st;
+            if (student == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                 st =new StudentInfoVM(
+                    student.StudentId,student.Fullname,
+                    student.Email,student.PhoneNumber,
+                    student.DoB,student.Address,
+                    student.NoIdentity);
+            }
+            
+            return View(st);
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(StudentInfoVM viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var student = await db.Students.FindAsync(viewModel.StudentId);
+                if (student == null)
+                {
+                    return NotFound();
+                }
+
+                student.Fullname = viewModel.Fullname;
+                student.Email = viewModel.Email;
+                student.PhoneNumber = viewModel.PhoneNumber;
+                student.DoB = viewModel.DoB;
+                student.Address = viewModel.Address;
+                student.NoIdentity = viewModel.NoIdentity;
+
+                await db.SaveChangesAsync();
+  
+            }
+
             return RedirectToAction("ShowStudentList", "Admin");
         }
         #endregion
