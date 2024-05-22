@@ -52,10 +52,22 @@ namespace StudentMG.Controllers
         #endregion
 
         #region Show list student
-        public IActionResult ShowStudentList()
+        public IActionResult ShowStudentList(string searchString)
         {
-            var list = db.Students.ToList();
-            var list2 = list.Select(s => new StudentVM
+            var query = db.Students.AsQueryable(); // Bắt đầu với tất cả sinh viên
+
+            // Nếu có chuỗi tìm kiếm, lọc danh sách theo chuỗi đó
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                query = query.Where(s =>
+                    s.Fullname.Contains(searchString) || // Tìm theo tên
+                    s.Email.Contains(searchString) ||   // Tìm theo email
+                    s.PhoneNumber.Contains(searchString) // Tìm theo số điện thoại (nếu có)
+                );
+            }
+
+            // Chuyển kết quả sang ViewModel và chuyển về view
+            var list = query.Select(s => new StudentVM
             {
                 StudentId = s.StudentId,
                 Username = s.Username,
@@ -64,8 +76,7 @@ namespace StudentMG.Controllers
                 Email = s.Email,
                 PhoneNumber = s.PhoneNumber
             }).ToList();
-            return View(list2);
-
+            return View(list);
         }
         #endregion
         #region create a student
