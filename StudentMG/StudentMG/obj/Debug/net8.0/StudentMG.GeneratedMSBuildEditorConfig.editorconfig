@@ -26,8 +26,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = F:\Study\ThCSharp\StudentManagement\v2\StudentMN\StudentMG\StudentMG
 build_property._RazorSourceGeneratorDebug = 
 
+[F:/Study/ThCSharp/StudentManagement/v2/StudentMN/StudentMG/StudentMG/Views/Admin/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Study/ThCSharp/StudentManagement/v2/StudentMN/StudentMG/StudentMG/Views/Admin/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Study/ThCSharp/StudentManagement/v2/StudentMN/StudentMG/StudentMG/Views/Admin/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Study/ThCSharp/StudentManagement/v2/StudentMN/StudentMG/StudentMG/Views/Admin/Login.cshtml]

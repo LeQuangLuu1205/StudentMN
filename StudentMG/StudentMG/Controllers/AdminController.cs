@@ -4,6 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 using StudentMG.Data;
 using StudentMG.ViewModels;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using StudentMG.Helpers;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 
 namespace StudentMG.Controllers
 {
@@ -26,17 +30,17 @@ namespace StudentMG.Controllers
         {
             if (ModelState.IsValid)
             {
-                var acc = db.AccountAdmins.SingleOrDefault(ad => ad.Username == model.Username && ad.Password== model.Password);
+                var acc = db.AccountAdmins.SingleOrDefault(ad => ad.Username == model.Username && ad.Password == model.Password);
                 if (acc == null)
                 {
-                    ModelState.AddModelError("loi", "Không có tài khỏan này");  
+                    ModelState.AddModelError("loi", "Không có tài khỏan này");
                 }
                 else
                 {
                     return RedirectToAction("Dashboard", "Admin");
                 }
             }
-                return View();
+            return View();
         }
         #endregion
 
@@ -47,10 +51,142 @@ namespace StudentMG.Controllers
         }
         #endregion
 
-        #region
-        public IActionResult ShowStudentList()
+        #region Show list student
+        public IActionResult ShowStudentList(string searchString)
         {
-            return View();
+            var query = db.Students.AsQueryable(); // Bắt đầu với tất cả sinh viên
+
+            // Nếu có chuỗi tìm kiếm, lọc danh sách theo chuỗi đó
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                query = query.Where(s =>
+                    s.Fullname.Contains(searchString) || // Tìm theo tên
+                    s.Email.Contains(searchString) ||   // Tìm theo email
+                    s.PhoneNumber.Contains(searchString) // Tìm theo số điện thoại (nếu có)
+                );
+            }
+
+            // Chuyển kết quả sang ViewModel và chuyển về view
+            var list = query.Select(s => new StudentVM
+            {
+                StudentId = s.StudentId,
+                Username = s.Username,
+                Password = s.Password,
+                Fullname = s.Fullname,
+                Email = s.Email,
+                PhoneNumber = s.PhoneNumber
+            }).ToList();
+            return View(list);
+        }
+        #endregion
+        #region create a student
+        [HttpGet]
+        public IActionResult Create()
+        {
+            var viewModel = new Student2VM
+            {
+                Classes = db.Classes.Select(c => new SelectListItem
+                {
+                    Value = c.ClassId,
+                    Text = c.Name
+                }).ToList()
+            };
+
+            return View(viewModel);
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(Student2VM model)
+        {
+
+
+            if (ModelState.IsValid)
+            {
+                model.Student.RandomKey = MyUtil.GenerateRandomkey();
+                model.Student.Password = model.Student.Password.ToMd5Hash(model.Student.RandomKey);
+                db.Students.Add(model.Student);
+                db.SaveChangesAsync();
+                return RedirectToAction("ShowStudentList", "Admin");
+            } else
+            {
+                // Nếu có lỗi, nạp lại danh sách Classes
+                model.Classes = db.Classes.Select(c => new SelectListItem
+                {
+                    Value = c.ClassId,
+                    Text = c.Name
+                }).ToList();
+                return View(model);
+            }
+
+        }
+        #endregion
+        #region delete student
+        public IActionResult Delete(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                Student student = db.Students.Find(id);
+                if (student == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    db.Students.Remove(student);
+                    db.SaveChanges();
+                }
+            }
+            return RedirectToAction("ShowStudentList", "Admin");
+        }
+        #endregion
+        #region edit student
+        public async Task<IActionResult> Edit(string id)
+        {
+            Student student = db.Students.Find(id);
+            StudentInfoVM st;
+            if (student == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                 st =new StudentInfoVM(
+                    student.StudentId,student.Fullname,
+                    student.Email,student.PhoneNumber,
+                    student.DoB,student.Address,
+                    student.NoIdentity);
+            }
+            
+            return View(st);
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(StudentInfoVM viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var student = await db.Students.FindAsync(viewModel.StudentId);
+                if (student == null)
+                {
+                    return NotFound();
+                }
+
+                student.Fullname = viewModel.Fullname;
+                student.Email = viewModel.Email;
+                student.PhoneNumber = viewModel.PhoneNumber;
+                student.DoB = viewModel.DoB;
+                student.Address = viewModel.Address;
+                student.NoIdentity = viewModel.NoIdentity;
+
+                await db.SaveChangesAsync();
+  
+            }
+
+            return RedirectToAction("ShowStudentList", "Admin");
         }
         #endregion
     }

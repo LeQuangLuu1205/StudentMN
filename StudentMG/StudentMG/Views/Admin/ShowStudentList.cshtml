@@ -1,108 +1,144 @@
-﻿@model IEnumerable<StudentMG.Data.Student>
+﻿@model IEnumerable<StudentMG.ViewModels.StudentVM>
 
 @{
-    ViewData["Title"] = "ShowStudentList";
+    ViewData["Title"] = "Show Student List";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>ShowStudentList</h1>
+<style>
+    /* Định dạng cho tiêu đề */
+    h1 {
+        color: #333; /* Màu chữ đen */
+        font-size: 24px; /* Kích thước chữ */
+        margin-bottom: 20px; /* Khoảng cách dưới */
+    }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Username)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Password)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fullname)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DoB)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gender)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NoIdentity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Role)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsExist)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RandomKey)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Class)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Username)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fullname)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DoB)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gender)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NoIdentity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Role)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsExist)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RandomKey)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Class.ClassId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.StudentId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.StudentId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.StudentId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    /* Định dạng cho nút Create New và Back to full list */
+    .btn-create {
+        background-color: #007bff; /* Màu xanh dương */
+        color: #fff; /* Màu chữ trắng */
+        border-color: #007bff; /* Màu viền */
+    }
+
+        .btn-create:hover {
+            background-color: #0056b3; /* Màu xanh dương nhạt khi hover */
+            border-color: #0056b3; /* Màu viền khi hover */
+        }
+
+    .btn-back {
+        background-color: #6c757d; /* Màu xám */
+        color: #fff; /* Màu chữ trắng */
+        border-color: #6c757d; /* Màu viền */
+    }
+
+        .btn-back:hover {
+            background-color: #5a6268; /* Màu xám nhạt khi hover */
+            border-color: #5a6268; /* Màu viền khi hover */
+        }
+
+    /* Định dạng cho nút Search */
+    .btn-search {
+        background-color: #28a745; /* Màu xanh lá */
+        color: #fff; /* Màu chữ trắng */
+        border-color: #28a745; /* Màu viền */
+    }
+
+        .btn-search:hover {
+            background-color: #218838; /* Màu xanh lá nhạt khi hover */
+            border-color: #218838; /* Màu viền khi hover */
+        }
+
+    /* Định dạng cho các biểu tượng */
+    .edit-icon {
+        color: #007bff; /* Màu xanh dương */
+    }
+
+    .delete-icon {
+        color: #dc3545; /* Màu đỏ */
+    }
+
+    /* Định dạng cho thẻ div bao trùm */
+    .table-container {
+        background-color: #fff; /* Màu nền trắng */
+        border-radius: 8px; /* Độ cong góc */
+        padding: 20px; /* Khoảng cách giữa nội dung và viền */
+        margin-bottom: 20px; /* Khoảng cách dưới */
+    }
+</style>
+
+<h1>Danh sách sinh viên</h1>
+
+<div class="table-container">
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <a asp-action="Create" class="btn btn-primary btn-create">Tạo mới</a>
+        </div>
+        <div class="col-md-6">
+            <a asp-action="ShowStudentList" class="btn btn-secondary btn-back">Danh sách đầy đủ</a>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <form asp-action="ShowStudentList" asp-controller="Admin">
+                <div class="input-group">
+                    <input name="searchString" class="form-control" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-success btn-search" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Username)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Password)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fullname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Password)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fullname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.StudentId">
+                            <i class="fas fa-edit edit-icon"></i>
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.StudentId">
+                            <i class="fas fa-trash-alt delete-icon"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
