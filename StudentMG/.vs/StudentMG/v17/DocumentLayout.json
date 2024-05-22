@@ -166,47 +166,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Profile.cshtml",
-              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\Views\\Student\\Profile.cshtml",
-              "RelativeDocumentMoniker": "StudentMG\\Views\\Student\\Profile.cshtml",
-              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\Views\\Student\\Profile.cshtml",
-              "RelativeToolTip": "StudentMG\\Views\\Student\\Profile.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-21T09:48:21.876Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ShowGrade.cshtml",
-              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\Views\\Student\\ShowGrade.cshtml",
-              "RelativeDocumentMoniker": "StudentMG\\Views\\Student\\ShowGrade.cshtml",
-              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\Views\\Student\\ShowGrade.cshtml",
-              "RelativeToolTip": "StudentMG\\Views\\Student\\ShowGrade.cshtml",
-              "ViewState": "AQIAABsAAAAAAAAAAAAswDEAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-20T09:32:59.714Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "StudentMG\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "StudentMG\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAABoAAAAAAAAAAAAowDcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-21T09:11:18.246Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -217,8 +178,7 @@
               "RelativeToolTip": "StudentMG\\Controllers\\HomeController.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAQwA8AAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T09:40:24.573Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-22T09:40:24.573Z"
             },
             {
               "$type": "Document",
@@ -235,6 +195,42 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "StudentMG\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "StudentMG\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAABoAAAAAAAAAAAAowDcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-21T09:11:18.246Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ShowGrade.cshtml",
+              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\Views\\Student\\ShowGrade.cshtml",
+              "RelativeDocumentMoniker": "StudentMG\\Views\\Student\\ShowGrade.cshtml",
+              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\Views\\Student\\ShowGrade.cshtml",
+              "RelativeToolTip": "StudentMG\\Views\\Student\\ShowGrade.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAswDEAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-20T09:32:59.714Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\Views\\Student\\Profile.cshtml",
+              "RelativeDocumentMoniker": "StudentMG\\Views\\Student\\Profile.cshtml",
+              "ToolTip": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\Views\\Student\\Profile.cshtml",
+              "RelativeToolTip": "StudentMG\\Views\\Student\\Profile.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-21T09:48:21.876Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Update.cshtml",
               "DocumentMoniker": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\Views\\Student\\Update.cshtml",
@@ -243,8 +239,7 @@
               "RelativeToolTip": "StudentMG\\Views\\Student\\Update.cshtml",
               "ViewState": "AQIAAEIAAAAAAAAAAAAswF8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-20T03:04:12.381Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-20T03:04:12.381Z"
             },
             {
               "$type": "Document",
@@ -256,8 +251,7 @@
               "RelativeToolTip": "StudentMG\\Views\\Student\\Login.cshtml",
               "ViewState": "AQIAADsAAAAAAAAAAAAowEoAAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-20T07:28:45.951Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-20T07:28:45.951Z"
             },
             {
               "$type": "Document",
@@ -269,8 +263,7 @@
               "RelativeToolTip": "StudentMG\\ViewModels\\LoginVM.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T13:04:01.033Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-19T13:04:01.033Z"
             },
             {
               "$type": "Document",
@@ -282,8 +275,7 @@
               "RelativeToolTip": "StudentMG\\Views\\Admin\\Login.cshtml",
               "ViewState": "AQIAACQAAAAAAAAAAADwvzcAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-21T10:13:37.037Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-21T10:13:37.037Z"
             },
             {
               "$type": "Document",
