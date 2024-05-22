@@ -50,8 +50,19 @@ namespace StudentMG.Controllers
         #region
         public IActionResult ShowStudentList()
         {
-            return View();
-        }
+            var list = db.Students.ToList();
+            var list2 = list.Select(s => new StudentVM
+            {
+                StudentId = s.StudentId,
+                Username = s.Username,
+                Password = s.Password,
+                Fullname = s.Fullname,
+                Email = s.Email,
+                PhoneNumber = s.PhoneNumber
+            }).ToList();
+            return View(list2);
+           
+    }
         #endregion
     }
 }

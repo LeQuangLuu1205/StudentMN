@@ -283,4 +283,6 @@ public partial class DbStudentmanagementContext : DbContext
 public DbSet<StudentMG.ViewModels.GradeVM> GradeVM { get; set; } = default!;
 
 public DbSet<StudentMG.ViewModels.ImageVM> ImageVM { get; set; } = default!;
+
+public DbSet<StudentMG.ViewModels.StudentVM> StudentVM { get; set; } = default!;
 }
