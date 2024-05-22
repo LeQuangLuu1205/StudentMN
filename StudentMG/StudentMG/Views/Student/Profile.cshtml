@@ -1,0 +1,15 @@
+﻿@using System.Security.Claims
+@using System.Web
+@{
+    var identity = (ClaimsIdentity)User.Identity;
+    var maSinhVienClaim = identity.FindFirst("MaSinhVien");
+    var maSinhVien = maSinhVienClaim != null ? maSinhVienClaim.Value : "Not Available";
+    ViewData["ID"] = maSinhVien;
+    ViewData["Title"] = "Profile";
+    ViewData["Fullname"] = @Context.User.Identity.Name;
+    ViewData["Role"] = "Sinh viên";
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<h1>Hi</h1>
+
