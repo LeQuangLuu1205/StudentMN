@@ -10,53 +10,86 @@
     Layout = "~/Views/Shared/_LayoutStudent.cshtml";
 }
 
-<h1>Update</h1>
+<style>
+    .form-container {
+        background-color: #ffffff;
+        padding: 20px;
+        margin: 0 auto;
+        max-width: 400px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-<h4>StudentInfoVM</h4>
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .btn-primary {
+        padding: 10px 20px;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        color: #ffffff;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+</style>
+
+<h1 class="text-center">Cập nhật thông tin cá nhân</h1>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Update">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="StudentId" />
-            <div class="form-group">
-                <label asp-for="Fullname" class="control-label"></label>
-                <input asp-for="Fullname" class="form-control" />
-                <span asp-validation-for="Fullname" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label"></label>
-                <input asp-for="PhoneNumber" class="form-control" />
-                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DoB" class="control-label"></label>
-                <input asp-for="DoB" class="form-control" />
-                <span asp-validation-for="DoB" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
-                <span asp-validation-for="Address" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NoIdentity" class="control-label"></label>
-                <input asp-for="NoIdentity" class="form-control" />
-                <span asp-validation-for="NoIdentity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="container form-container">
+    <form asp-action="Update">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="StudentId" />
+        <div class="form-group">
+            <label asp-for="Fullname" class="control-label"></label>
+            <input asp-for="Fullname" class="form-control" />
+            <span asp-validation-for="Fullname" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PhoneNumber" class="control-label"></label>
+            <input asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DoB" class="control-label"></label>
+            <input asp-for="DoB" class="form-control" type="date" />
+            <span asp-validation-for="DoB" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Address" class="control-label"></label>
+            <input asp-for="Address" class="form-control" />
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="NoIdentity" class="control-label"></label>
+            <input asp-for="NoIdentity" class="form-control" />
+            <span asp-validation-for="NoIdentity" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Lưu" class="btn btn-primary" />
+        </div>
+    </form>
 </div>
-

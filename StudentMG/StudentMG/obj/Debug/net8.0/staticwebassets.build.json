@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MlDX6ueybtGQ5hDHoDmEOKIssX481I2m0qaAicEp7G4=",
+  "Hash": "LlhtPeUN7SCjygfC5OzkrtRFPmTclKdeemqTk2e+2wo=",
   "Source": "StudentMG",
   "BasePath": "_content/StudentMG",
   "Mode": "Default",
@@ -4043,6 +4043,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\info\\anhthe4.jpg"
+    },
+    {
+      "Identity": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\wwwroot\\assets\\img\\info\\b0e6b114-fa0c-44d4-8358-4ae2be3107f5_thesv4.jpg",
+      "SourceId": "StudentMG",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\wwwroot\\",
+      "BasePath": "_content/StudentMG",
+      "RelativePath": "assets/img/info/b0e6b114-fa0c-44d4-8358-4ae2be3107f5_thesv4.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\info\\b0e6b114-fa0c-44d4-8358-4ae2be3107f5_thesv4.jpg"
     },
     {
       "Identity": "F:\\Study\\ThCSharp\\StudentManagement\\v2\\StudentMN\\StudentMG\\StudentMG\\wwwroot\\assets\\img\\info\\cmnd4.jpg",
