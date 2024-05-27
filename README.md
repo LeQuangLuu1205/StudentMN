@@ -1,3 +1,5 @@
+## Tên: Lê Quang Lưu  MSV: 21115053120126
+## Lớp: 223LTC01
 ## Installation Guide:
 
 1. **Development Environment:**
